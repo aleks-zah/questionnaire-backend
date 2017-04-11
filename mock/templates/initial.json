@@ -1,0 +1,40 @@
+{
+  "type": "template",
+  "id": "1",
+  "title": "TEST TEMPLATE TITLE",
+  "sections": [
+    {
+      "type": "section",
+      "title": "Section 1",
+      "id": "section1",
+      "pages": [
+        {
+          "type": "page",
+          "title": "Page 1",
+          "id": "page1",
+          "questions": [
+            {
+              "type": "question",
+              "title": "Question 1",
+              "id": "question1",
+              "renderer": "INPUT"
+            },
+            {
+              "type": "question",
+              "title": "Question 2",
+              "id": "question2",
+              "renderer": "INPUT",
+              "condition": {
+                "type": "SIBLING_FIELD_IS_EQUAL",
+                "params": {
+                  "fieldId": "question1",
+                  "value": "123"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

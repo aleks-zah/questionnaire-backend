@@ -1,0 +1,90 @@
+{
+  "type": "template",
+  "id": "2",
+  "title": "MULTI-PAGE",
+  "sections": [
+    {
+      "type": "section",
+      "title": "Section 1",
+      "id": "section1",
+      "pages": [
+        {
+          "type": "page",
+          "title": "Page 1",
+          "id": "page1",
+          "questions": [
+            {
+              "type": "question",
+              "title": "Question 1",
+              "id": "question1",
+              "renderer": "INPUT"
+            },
+            {
+              "type": "question",
+              "title": "Question 2",
+              "id": "question2",
+              "renderer": "INPUT",
+              "condition": {
+                "type": "SIBLING_FIELD_IS_EQUAL",
+                "params": {
+                  "fieldId": "question1",
+                  "value": "123"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "page",
+          "title": "Page 2",
+          "id": "page2",
+          "questions": [
+            {
+              "type": "question",
+              "title": "Question 122",
+              "id": "question122",
+              "renderer": "INPUT"
+            },
+            {
+              "type": "question",
+              "title": "Question 222",
+              "id": "question222",
+              "renderer": "INPUT",
+              "condition": {
+                "type": "SIBLING_FIELD_IS_NOT_EMPTY",
+                "params": {
+                  "fieldId": "question122"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "page",
+          "title": "Page 3",
+          "id": "page3",
+          "questions": [
+            {
+              "type": "question",
+              "title": "Question 133",
+              "id": "question133",
+              "renderer": "INPUT"
+            },
+            {
+              "type": "question",
+              "title": "Question 233",
+              "id": "question233",
+              "renderer": "INPUT",
+              "condition": {
+                "type": "SIBLING_FIELD_IS_NOT_EMPTY",
+                "params": {
+                  "fieldId": "question133"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

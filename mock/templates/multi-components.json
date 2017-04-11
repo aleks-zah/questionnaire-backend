@@ -1,0 +1,200 @@
+{
+  "type": "template",
+  "id": "4",
+  "title": "MULTI-COMPONENTS",
+  "sections": [
+    {
+      "type": "section",
+      "title": "First section",
+      "id": "section1",
+      "pages": [
+        {
+          "type": "page",
+          "title": "Page 1",
+          "id": "page11",
+          "questions": [
+            {
+              "type": "question",
+              "title": "First question",
+              "description": "Question with INPUT_NUMBER",
+              "placeholder": "Type 123 here to see next question",
+              "id": "question11",
+              "renderer": "INPUT_NUMBER",
+              "required": true
+            },
+            {
+              "type": "question",
+              "title": "Second question",
+              "description": "Question with INPUT_TEXT",
+              "placeholder": "Input some text here",
+              "id": "question21",
+              "renderer": "INPUT_TEXT",
+              "condition": {
+                "type": "SIBLING_FIELD_IS_EQUAL",
+                "params": {
+                  "fieldId": "question11",
+                  "value": 123
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "page",
+          "title": "Page 2",
+          "id": "page22",
+          "questions": [
+            {
+              "type": "question",
+              "title": "Third question",
+              "description": "Select Yes to see next question",
+              "id": "question122",
+              "renderer": "RADIO_HORIZONTAL",
+              "choices": [
+                "Yes",
+                "No"
+              ],
+              "required": true
+            },
+            {
+              "type": "question",
+              "title": "Fourth question",
+              "id": "question222",
+              "renderer": "DATE",
+              "condition": {
+                "type": "SIBLING_FIELD_IS_EQUAL",
+                "params": {
+                  "fieldId": "question122",
+                  "value": "Yes"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "page",
+          "title": "Page 3",
+          "id": "page3",
+          "questions": [
+            {
+              "type": "question",
+              "title": "Fifth question",
+              "description": "Type anything here to view next field",
+              "placeholder": "Placeholder value",
+              "id": "question133",
+              "renderer": "INPUT_TEXT",
+              "required": true
+            },
+            {
+              "type": "question",
+              "title": "Sixth question",
+              "description": "Checkbox question",
+              "id": "question233",
+              "renderer": "CHECKBOX",
+              "condition": {
+                "type": "SIBLING_FIELD_IS_NOT_EMPTY",
+                "params": {
+                  "fieldId": "question133"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Second section",
+      "id": "section2",
+      "pages": [
+        {
+          "type": "page",
+          "title": "Page 4",
+          "id": "page1134",
+          "questions": [
+            {
+              "type": "question",
+              "title": "Seventh question",
+              "description": "Select state WY to see the next question",
+              "id": "question1134",
+              "renderer": "DROPDOWN",
+              "required": true,
+              "choices": [
+                "Alabama",
+                "Alaska",
+                "Arizona",
+                "Arkansas",
+                "California",
+                "Colorado",
+                "Connecticut",
+                "Delaware",
+                "Florida",
+                "Georgia",
+                "Hawaii",
+                "Idaho",
+                "Illinois",
+                "Indiana",
+                "Iowa",
+                "Kansas",
+                "Kentucky",
+                "Louisiana",
+                "Maine",
+                "Maryland",
+                "Massachusetts",
+                "Michigan",
+                "Minnesota",
+                "Mississippi",
+                "Missouri",
+                "Montana",
+                "Nebraska",
+                "Nevada",
+                "New Hampshire",
+                "New Jersey",
+                "New Mexico",
+                "New York",
+                "North Carolina",
+                "North Dakota",
+                "Ohio",
+                "Oklahoma",
+                "Oregon",
+                "Pennsylvania",
+                "Rhode Island",
+                "South Carolina",
+                "South Dakota",
+                "Tennessee",
+                "Texas",
+                "Utah",
+                "Vermont",
+                "Virginia",
+                "Washington",
+                "West Virginia",
+                "Wisconsin",
+                "Wyoming"
+              ],
+              "defaultValue": "Select state..."
+            },
+            {
+              "type": "question",
+              "title": "Last question",
+              "description": "This is email field",
+              "placeholder": "email@vendor.com",
+              "id": "question2134",
+              "renderer": "INPUT_EMAIL",
+              "condition": {
+                "type": "SIBLING_FIELD_IS_EQUAL",
+                "params": {
+                  "fieldId": "question1134",
+                  "value": "Wyoming"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "primaryColor": "#fff",
+    "secondaryColor": "ddd"
+  }
+}

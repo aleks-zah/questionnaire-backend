@@ -1,0 +1,86 @@
+{
+  "name": "questionnaire-backend",
+  "version": "1.0.0",
+  "description": "Questionnaire backend",
+  "author": "Engagepoint",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "engines": {
+    "node": "~6.9.1",
+    "npm": ">=3.10.0"
+  },
+  "scripts": {
+    "prestart": "yarn run build",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.js --exec \"node -r 'dotenv/config' -r 'babel-register'\"",
+    "db:hydrate": "node dist/db/db-hydrate.js",
+    "db:drop": "node dist/db/db-drop.js",
+    "clean": "rm -rf dist",
+    "build": "yarn run clean && mkdir -p dist && babel src -s -D -d dist --presets es2015,stage-2 --plugins transform-flow-strip-types,lodash",
+    "test": "jest --watch",
+    "lint": "esw -w --fix src test",
+    "flow": "flow check",
+    "flow:coverage": "flow coverage"
+  },
+  "dependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "eslint": "^3.15.0",
+    "eslint-config-engagepoint": "^1.0.0-rc.15",
+    "express": "^4.14.0",
+    "flow-bin": "^0.39.0",
+    "http-status": "^1.0.1",
+    "lodash": "^4.17.4",
+    "morgan": "^1.7.0",
+    "rethinkdb": "^2.3.3"
+  },
+  "devDependencies": {
+    "babel-jest": "^18.0.0",
+    "babel-register": "^6.18.0",
+    "dotenv": "^4.0.0",
+    "eslint-plugin-jest": "^1.0.2",
+    "eslint-watch": "^2.1.14",
+    "jest": "^18.1.0",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ],
+    "plugins": [
+      "transform-flow-strip-types",
+      "lodash"
+    ]
+  },
+  "eslintConfig": {
+    "plugins": [
+      "jest"
+    ],
+    "parser": "babel-eslint",
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "engagepoint/server"
+    ],
+    "rules": {
+      "jest/no-exclusive-tests": 2,
+      "jest/no-identical-title": 2
+    }
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "directories": {
+    "test": "test"
+  }
+}

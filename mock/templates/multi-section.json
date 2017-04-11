@@ -1,0 +1,123 @@
+{
+  "type": "template",
+  "id": "3",
+  "title": "MULTI-SECTION",
+  "sections": [
+    {
+      "type": "section",
+      "title": "Section 1",
+      "id": "section1",
+      "pages": [
+        {
+          "type": "page",
+          "title": "Page 1",
+          "id": "page11",
+          "questions": [
+            {
+              "type": "question",
+              "title": "Question 1",
+              "id": "question11",
+              "renderer": "INPUT"
+            },
+            {
+              "type": "question",
+              "title": "Question 2",
+              "id": "question21",
+              "renderer": "INPUT",
+              "condition": {
+                "type": "SIBLING_FIELD_IS_EQUAL",
+                "params": {
+                  "fieldId": "question11",
+                  "value": "123"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "page",
+          "title": "Page 2",
+          "id": "page22",
+          "questions": [
+            {
+              "type": "question",
+              "title": "Question 122",
+              "id": "question122",
+              "renderer": "INPUT"
+            },
+            {
+              "type": "question",
+              "title": "Question 222",
+              "id": "question222",
+              "renderer": "INPUT",
+              "condition": {
+                "type": "SIBLING_FIELD_IS_NOT_EMPTY",
+                "params": {
+                  "fieldId": "question122"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "page",
+          "title": "Page 3",
+          "id": "page3",
+          "questions": [
+            {
+              "type": "question",
+              "title": "Question 133",
+              "id": "question133",
+              "renderer": "INPUT"
+            },
+            {
+              "type": "question",
+              "title": "Question 233",
+              "id": "question233",
+              "renderer": "INPUT",
+              "condition": {
+                "type": "SIBLING_FIELD_IS_NOT_EMPTY",
+                "params": {
+                  "fieldId": "question133"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Section 2",
+      "id": "section2",
+      "pages": [
+        {
+          "type": "page",
+          "title": "Page 114134",
+          "id": "page1134",
+          "questions": [
+            {
+              "type": "question",
+              "title": "Question 114",
+              "id": "question1134",
+              "renderer": "INPUT"
+            },
+            {
+              "type": "question",
+              "title": "Question 2134",
+              "id": "question2134",
+              "renderer": "INPUT",
+              "condition": {
+                "type": "SIBLING_FIELD_IS_EQUAL",
+                "params": {
+                  "fieldId": "question1134",
+                  "value": "111"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
